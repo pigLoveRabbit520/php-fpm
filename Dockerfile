@@ -1,4 +1,4 @@
-FROM php:7.1-fpm-alpine
+FROM php:5.6-fpm-alpine
 
 # Packages
 RUN apk --update add \
@@ -43,7 +43,7 @@ RUN apk --update add \
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /tmp
-ENV COMPOSER_VERSION 1.5.1
+ENV COMPOSER_VERSION 1.7.1
 
 
 RUN curl -s -f -L -o /tmp/installer.php https://raw.githubusercontent.com/composer/getcomposer.org/da290238de6d63faace0343efbdd5aa9354332c5/web/installer \
