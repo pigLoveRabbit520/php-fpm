@@ -29,8 +29,6 @@ RUN apk --update add \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
     pecl install redis && \
     docker-php-ext-enable redis && \
-    pecl install swoole && \
-    docker-php-ext-enable swoole && \
     docker-php-ext-install gd && \
     docker-php-ext-enable opcache && \
     apk del build-base \
@@ -43,7 +41,7 @@ RUN apk --update add \
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /tmp
-ENV COMPOSER_VERSION 1.7.1
+ENV COMPOSER_VERSION 1.5.1
 
 
 RUN curl -s -f -L -o /tmp/installer.php https://raw.githubusercontent.com/composer/getcomposer.org/da290238de6d63faace0343efbdd5aa9354332c5/web/installer \
